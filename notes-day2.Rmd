@@ -1,0 +1,33 @@
+---
+title: "Notes! Day 2"
+author: "Liz Roten"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(usethis)
+```
+
+Materials - https://github.com/rstudio-conf-2022/pkg-dev-masterclass
+
+
+## Leave no error behind  
+
+1. Consistency
+1. Transparency
+1. Relevance
+1. Exhaustiveness
+1. Conciseness
+
+Tools
+- follow style guide
+    - use consistent problem statements -> use "must" and "can't" phrases
+- format with CLI
+    - additional features, like rlang::abort 
+    - uses `{glue}`
+    - Action, What, and How
+- use error bullets
+- pass error calls and arguments
+- use chained errors

@@ -1,0 +1,53 @@
+---
+title: "Notes! Day 1"
+author: "Liz Roten"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(usethis)
+```
+
+
+Materials - https://github.com/rstudio-conf-2022/pkg-dev-masterclass
+
+## Notes!
+
+checklists!
+
+```{r, eval=F}
+use_tidy_upkeep_issue()
+```
+
+
+### `{usethis}` standards
+
+- `usethis::use_tidy_style()`
+- 
+
+### Testing
+
+Use a `devtools::load_all()` workflow. (CMD + Shift + L)
+
+1. Test should be self-sufficient and self-contained
+1. Interactive workflow is very important. USE THE STANDARD WORKFLOW
+1. Obvious >>> DRY (do not repeat yourself)
+    - make it super obvious why it works
+    - when you are working on on a failing test, you are already in a bad mood, so make it super easy to review
+1. Don'
+    - what that is causing you to do in your test suite
+    - is it leaving a lot of junk?
+1. Pull the object creation *inside* `test_that()`, which put everything in its own little environment
+
+think about if someone else would see if they parachute in
+Using the official 
+- `withr::local_options()` -> does something and schedules its destruction
+- do not run `library()` or `source()` within /tests
+ - make tests/fixtures/
+ 
+ setup.R is not run by `load_all()`. Use it for CI setup, etc
+ only write to session temp.dir, and clean up after yourself
+ 
+ 
