@@ -31,3 +31,33 @@ Tools
 - use error bullets
 - pass error calls and arguments
 - use chained errors
+
+## Testing, and snapshot tests
+
+- Snapshot tests are for when you don't know the correct output, BUT you know it when you see it. 
+
+- Expected result is captured once and stored as a file within /tests/
+- Great for testing messages and errors
+- Waldo compare 
+
+- snapshot tests only work in a non-interactive context
+- `snapshot_review()`
+- snapshots are not testing correctness, they are testing the expectation
+    - `transform` takes the snapshot, does something to it, and spits it back out
+    - `variant`, like if a function returns system operating info
+    - if you want to inspect an error message `expect_snapshot(error = TRUE`)
+    - check the class, `expect_error(class = .)`
+    - expect the message and check the class, `expect_snapshot_error()`
+    
+new info
+- the `@importFrom` tag can only look for functions that are exported from the given package. 
+
+
+## Function design 
+
+- Required arguments shouldn't have defaults
+- Avoid magical defaults.
+- Keep defaults short and sweet
+- Explain important defaults
+- Enumerate limited input parameters
+    - 
